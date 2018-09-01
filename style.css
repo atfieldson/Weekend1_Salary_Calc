@@ -1,0 +1,85 @@
+#container{
+    width: 600px;
+    margin: auto;
+    background: rgba(148, 149, 150, 0.164);
+}
+
+h1{
+    color: white;
+    margin: auto;
+    background: #494946;
+    text-align: center;
+    padding: 25px;
+}
+h2{
+    padding: 5px;
+}
+
+input {
+    margin: 8px;
+    font-size: 10px;
+}
+
+#deleteButton, #submitButton{
+    background: linear-gradient(top, #ffffff 0%, #3a4053 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #3a4053 100%);
+/* I think webkit only works on chrome and safari, I need to do more research */
+}
+
+#deleteButton:hover, #submitButton:hover{
+    background: linear-gradient(top, #3a4053 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #3a4053 0%, #ffffff 100%);
+}
+#submitButton{
+    margin: 10px;
+    font-size: 14px;
+}
+#errorMessage{
+    background: red;
+    color: white;
+    margin: 20px;
+    
+
+}
+
+#employeeTable {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    width: 500px;
+    text-align: center;
+}
+
+.employeeFirstName{
+    width: 80px;
+}
+
+.employeeLastName{
+    width: 80px;
+}
+
+.employeeIDNumber{
+    width: 35px;
+}
+.annualSalary{
+    width: 110px;
+}
+
+tr:nth-child(odd) {
+    background: rgb(177, 171, 171);
+} 
+th{
+    background: rgb(139, 130, 130);
+}
+
+th, td{
+    border: 2px solid black;   
+}
+
+#totalMonthlySalaryP{
+    margin: 10px;
+}
+
+
+
+
