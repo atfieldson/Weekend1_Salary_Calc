@@ -31,8 +31,9 @@ input {
     background: -webkit-linear-gradient(top, #3a4053 0%, #ffffff 100%);
 }
 #submitButton{
-    margin: 10px;
     font-size: 14px;
+    position: relative;
+    left: 440px;
 }
 #errorMessage{
     background: red;

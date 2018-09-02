@@ -82,8 +82,13 @@ function submitClick() {
 }
 
 function deleteTableRow() {
-    console.log('Hello');
+    console.log('in delete table row');
+    let removedEmployee= employeeList.indexOf(this.employeeID);
+    // .indexOf is finding the first occurance of this.employeeID in the employeeList, since employeeID is individual,
+    //it identifies the needed employee!  Also, removedEmployee is simply an index of employeeList.
+    employeeList.splice(removedEmployee, 1);//the '1' indicates how many items to be removed
     $(this).parents('tr').empty();
+    calculateMonthlySalary();
 }
 
 function checkForErrors(){
