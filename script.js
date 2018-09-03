@@ -23,11 +23,11 @@ class Employee {
     }//end constructor
 }//end NewEmployee
 
-employeeList.push(new Employee('Jill', 'Smith', '2764', '67000' ));
-employeeList.push(new Employee('Eve', 'Jackson', '4209', '53500' ));
+employeeList.push(new Employee('Jill', 'Smith', '2764', '67000'));
+employeeList.push(new Employee('Eve', 'Jackson', '4209', '53500'));
 
-function establishTable(){
-    for( employee in employeeList ){
+function establishTable() {
+    for (employee in employeeList) {
         $('table').append(` 
     <tr>
         <td >` + employeeList[employee].firstName + `</td>
@@ -46,22 +46,22 @@ function submitClick() {
     let employeeID = $('#inputID').val();
     let annualSalary = Number($('#inputAnnualSalary').val());
 
-   
-    $( '#errorMessage').detach();
+
+    $('#errorMessage').detach();
     //for some reason, .empty() didn't work, but .detach() worked, jQuery website: 
     //If you want to remove elements without destroying their data or event handlers (so they can be re-added later), use .detach() instead. 
 
-    if (checkForErrors()){
+    if (checkForErrors()) {
         return false;
     }
     //push user input to employeList
-    employeeList.push( new Employee(
+    employeeList.push(new Employee(
         firstName,
         lastName,
         employeeID,
         annualSalary
     ));
-    
+
     //add a table row with these values
     $('table').append(` 
     <tr>
@@ -78,12 +78,12 @@ function submitClick() {
     $('#inputAnnualSalary').val('');
 
     calculateMonthlySalary();
-    
+
 }
 
 function deleteTableRow() {
     console.log('in delete table row');
-    let removedEmployee= employeeList.indexOf(this.employeeID);
+    let removedEmployee = employeeList.indexOf(this.employeeID);
     // .indexOf is finding the first occurance of this.employeeID in the employeeList, since employeeID is individual,
     //it identifies the needed employee!  Also, removedEmployee is simply an index of employeeList.
     employeeList.splice(removedEmployee, 1);//the '1' indicates how many items to be removed
@@ -91,11 +91,11 @@ function deleteTableRow() {
     calculateMonthlySalary();
 }
 
-function checkForErrors(){
+function checkForErrors() {
     //empty the error field
     let firstName = $('#inputFirstName').val();
     let lastName = $('#inputLastName').val();
-    let employeeNumber = $('#inputID').val();
+    let employeeID = $('#inputID').val();
     let annualSalary = $('#inputAnnualSalary').val();
 
     //check to see if all fields are complete
@@ -111,18 +111,25 @@ function checkForErrors(){
         return true;
     }
 
-    else if (employeeNumber === '') {
+    else if (employeeID === '') {
         console.log('EN error');
-        $('#submitAndError').append(`<p id=errorMessage> Please complete the Employee Number field</p>`);
+        $('#submitAndError').append(`<p id=errorMessage> Please complete the Employee ID field</p>`);
         return true;
     }
 
     //employee number must be 4 digits exactly long
-    else if (employeeNumber.length !== 4){
-        console.log( 'EN not 4 digits long');
-        $('#submitAndError').append(`<p id=errorMessage> The Employee Number field must be 4 digits long</p>`);
+    else if (employeeID.length !== 4) {
+        console.log('EN not 4 digits long');
+        $('#submitAndError').append(`<p id=errorMessage> The Employee ID field must be 4 digits long</p>`);
         return true;
     }
+    //trying to check if the new employeeID already exists in the array
+    else if ( checkIfIDAlreadyExists( employeeID )){
+    console.log( 'employee ID is not different' );
+    $('#submitAndError').append(`<p id=errorMessage> This Employee ID already exists, please choose another</p>`);
+    return true;
+    }
+    
 
     else if (annualSalary === '') {
         console.log('AS error');
@@ -132,15 +139,22 @@ function checkForErrors(){
 
 }
 
-function calculateMonthlySalary(){
+function checkIfIDAlreadyExists( employeeIDInput ){
+    for (let i = 0; i < employeeList.length; i++)
+        if (employeeList[i].employeeID === employeeIDInput ) {
+            return employeeList[i];
+        }
+}
+
+function calculateMonthlySalary() {
     let totalAnnualSalary = 0
-    
+
     //add up all the salaries and display it on the DOM
-    
-    for (employee in employeeList){
+
+    for (employee in employeeList) {
         totalAnnualSalary += parseInt(employeeList[employee].annualSalary);
     }//end for
-    
+
     //Divide it by 12 to get the monthly salary
     totalMonthlySalary = totalAnnualSalary / 12;
     $('#totalMonthlySalary').empty();
