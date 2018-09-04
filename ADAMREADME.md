@@ -1,0 +1,2 @@
+This was the first weekend project at prime.  We had been working on jQuery for most of the week.  We had an intro to 
+bootstrap during the weekend, so I added a little bit of that to experiment with it.  

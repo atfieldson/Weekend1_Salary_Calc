@@ -7,40 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weekend1_Salary_Calc</title>
     <script src="jquery.js"></script>
+
     <script src="script.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id=container>
-        <h1>
-            Salary Calculator
-        </h1>
-        <h2>
-                Add Employee
-        </h2>
-        <p id=inputData>
-            <input type="text" id=inputFirstName placeholder="First Name">
-            <input type="text" id=inputLastName placeholder="Last Name">
-            <input type="text" id=inputID placeholder="Employee ID">
-            <input type="text" id=inputAnnualSalary placeholder="Annual Salary">
-        </p>
-        <div id=submitAndError>
-        <button id="submitButton">Submit</button>
-        </div>
-        <h2>
-            Employees
-        </h2>
-        <!-- check out jQuery challenges for table styling stuff -->
-        <table id="employeeTable" style="width:fit-content">
-            <tr>
-                <th class="employeeFirstName">First Name</th>
-                <th class="employeeLastName">Last Name</th>
-                <th class="employeeIDNumber">ID</th>
-                <th class="annualSalary">Annual Salary</th>
-                <th>Delete Employee</th>
-            </tr>
-            <!-- <tr>
+    <div class="container">
+    <h1>
+        Salary Calculator
+    </h1>
+    <h2>
+        Add Employee
+    </h2>
+    <p id=inputData class="row">
+        <input type="text" id=inputFirstName placeholder="First Name" >
+        <input type="text" id=inputLastName placeholder="Last Name" >
+        <input type="text" id=inputID placeholder="Employee ID" >
+        <input type="text" id=inputAnnualSalary placeholder="Annual Salary" >
+    </p>
+    <div id=submitAndError>
+        <button id="submitButton" class="btn btn-primary">Submit</button>
+    </div>
+    <h2>
+        Employees
+    </h2>
+    <!-- check out jQuery challenges for table styling stuff -->
+    <table id="employeeTable" style="width:fit-content">
+        <tr>
+            <th class="employeeFirstName">First Name</th>
+            <th class="employeeLastName">Last Name</th>
+            <th class="employeeIDNumber">ID</th>
+            <th class="annualSalary">Annual Salary</th>
+            <th>Delete Employee</th>
+        </tr>
+        <!-- <tr>
                 <td class="employeeFirstName">Jill</td>
                 <td class="employeeLastName">Smith</td>
                 <td class="employeeIDNumber">4521</td>
@@ -54,9 +58,9 @@
                 <td class="annualSalary">58,000</td>
                 <td><button id=deleteButton>Delete</button></td>
             </tr> -->
-        </table>
-        <br>
-        <p id=totalMonthlySalaryP>Total Monthly: <span id=totalMonthlySalary></span></p>
+    </table>
+    <br>
+    <p id=totalMonthlySalaryP>Total Monthly: <span id=totalMonthlySalary></span></p>
     </div>
 </body>
 

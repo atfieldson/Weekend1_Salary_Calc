@@ -1,4 +1,4 @@
-#container{
+.container{
     width: 600px;
     margin: auto;
     background: rgba(148, 149, 150, 0.164);
@@ -9,26 +9,28 @@ h1{
     margin: auto;
     background: #494946;
     text-align: center;
-    padding: 25px;
+    padding: 20px;
 }
 h2{
     padding: 5px;
 }
 
 input {
-    margin: 8px;
-    font-size: 10px;
+    margin: 6px;
+    font-size: 16px;
+    height: 24px;
+    width: 120px;
 }
 
 #deleteButton, #submitButton{
-    background: linear-gradient(top, #ffffff 0%, #3a4053 100%);
-    background: -webkit-linear-gradient(top, #ffffff 0%, #3a4053 100%);
+    background: linear-gradient(top, #535353 0%, black 100%);
+    background: -webkit-linear-gradient(top, #535353 0%, black 100%);
 /* I think webkit only works on chrome and safari, I need to do more research */
 }
 
 #deleteButton:hover, #submitButton:hover{
-    background: linear-gradient(top, #3a4053 0%, #ffffff 100%);
-    background: -webkit-linear-gradient(top, #3a4053 0%, #ffffff 100%);
+    background: linear-gradient(top, black 0%, #535353 100%);
+    background: -webkit-linear-gradient(top, black 0%, #535353 100%);
 }
 #submitButton{
     font-size: 14px;

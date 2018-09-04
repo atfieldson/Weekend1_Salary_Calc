@@ -34,7 +34,7 @@ function establishTable() {
         <td >` + employeeList[employee].lastName + `</td>
         <td >` + employeeList[employee].employeeID + `</td>
         <td class="annualSalary"><span>$</span>` + Number(employeeList[employee].annualSalary).toLocaleString() + `</td>
-        <td><button id=deleteButton>Delete</button></td>
+        <td><button id=deleteButton class="btn btn-secondary">Delete</button></td>
     </tr>`);
     }
 }
@@ -69,7 +69,7 @@ function submitClick() {
         <td >` + employeeList[employeeList.length - 1].lastName + `</td>
         <td >` + employeeList[employeeList.length - 1].employeeID + `</td>
         <td class="annualSalary"><span>$</span>` + Number(employeeList[employeeList.length - 1].annualSalary.toFixed(2)).toLocaleString() + `</td>
-        <td><button id=deleteButton>Delete</button></td>
+        <td><button id=deleteButton class="btn btn-secondary">Delete</button></td>
     </tr>`);
     //clear the field
     $('#inputFirstName').val('');
